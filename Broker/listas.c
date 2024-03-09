@@ -104,7 +104,7 @@ void dump_cache(void){
 	char* dump = string_new();
 	string_append(&dump, "\n-----------------------------------------------------------------------------------------------------------------------------\n");
 	string_append(&dump, "Dump: ");
-	char* time = temporal_get_string_time();		//TODO esta la hora pero falta la fecha
+	char* time = temporal_get_string_time("%d/%m/%y %H:%M:%S");
 	string_append(&dump, time);
 	free(time);
 

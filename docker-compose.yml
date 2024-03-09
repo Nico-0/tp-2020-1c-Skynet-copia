@@ -1,0 +1,35 @@
+version: "3.8"
+
+services:
+
+  broker:
+    container_name: broker
+    image: skynet
+    build: .
+    command: ./broker
+    environment:
+      - LD_LIBRARY_PATH=/home/utnso/tp-2020-1c-Skynet/utils/Debug
+
+  team:
+    container_name: team
+    image: skynet
+    pull_policy: never
+    command: ./team
+    environment:
+      - LD_LIBRARY_PATH=/home/utnso/tp-2020-1c-Skynet/utils/Debug
+    
+  gamecard:
+    container_name: gamecard
+    image: skynet
+    pull_policy: never
+    command: ./gamecard
+    environment:
+      - LD_LIBRARY_PATH=/home/utnso/tp-2020-1c-Skynet/utils/Debug
+    
+  gameboy:
+    container_name: gameboy
+    image: skynet
+    pull_policy: never
+    command: /bin/bash -c 'tail -f /dev/null'
+    environment:
+      - LD_LIBRARY_PATH=/home/utnso/tp-2020-1c-Skynet/utils/Debug
